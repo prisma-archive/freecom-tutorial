@@ -1,0 +1,51 @@
+type Agent {
+  createdAt: DateTime
+  id: ID!
+  messages: [Message!]! @relation(name: "MessagesFromAgents")
+  slackUserId: String
+  slackUserName: String
+  updatedAt: DateTime
+}
+
+type Conversation {
+  createdAt: DateTime
+  customer: Customer @relation(name: "ConversationsFromCustomer")
+  id: ID!
+  messages: [Message!]! @relation(name: "MessagesInConversation")
+  slackChannelName: String
+  updatedAt: DateTime
+}
+
+type Customer {
+  conversations: [Conversation!]! @relation(name: "ConversationsFromCustomer")
+  createdAt: DateTime
+  id: ID!
+  name: String
+  updatedAt: DateTime
+}
+
+type File {
+  contentType: String!
+  createdAt: DateTime
+  id: ID!
+  name: String!
+  secret: String!
+  size: Int!
+  updatedAt: DateTime
+  url: String!
+}
+
+type Message {
+  agent: Agent @relation(name: "MessagesFromAgents")
+  conversation: Conversation @relation(name: "MessagesInConversation")
+  createdAt: DateTime
+  id: ID!
+  text: String
+  updatedAt: DateTime
+}
+
+type User {
+  createdAt: DateTime
+  id: ID!
+  updatedAt: DateTime
+}

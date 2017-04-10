@@ -1,0 +1,9 @@
+{
+  "schema": {
+    "request": {
+      "url": "https://api.graph.cool/simple/v1/cizf8g3fr1sp90139ikdjayb7",
+      "method": "POST",
+      "postIntrospectionQuery": true
+    }
+  }
+}
