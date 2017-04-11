@@ -12,6 +12,6 @@ Note that you'll have to [add your own GraphQL endpoint](https://www.youtube.com
 
 The chapters provide a high-level overview on the concepts being used. If you want to code along, watch our videos to get step-by-step instructions for implementing the next features.
 
-- Building a production-ready Intercom-clone with GraphQL and Apollo (Overview) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-overview-e8a6ajt8ax/) | [Video](https://www.youtube.com/watch?v=VEPAoDDv6dg)
-- Creating the Data Model & GraphQL Server (1/6) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-graphql-server-xuakjj68lp/) | [Video](https://www.youtube.com/watch?v=4q0fFEypacA)
-- Sending Queries and Mutations with Apollo & React (2/6) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-apollo-queries-mutations) | [Video](https://www.youtube.com/watch?v=ZItsQWNPw1U)
+- Building Intercom with GraphQL, Apollo & React (Overview) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-overview-intercom-tutorial-e8a6ajt8ax/) | [Video](https://www.youtube.com/watch?v=VEPAoDDv6dg)
+- Designing the Schema & GraphQL Server (1/6) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-1-schema-graphql-server-xuakjj68lp/) | [Video](https://www.youtube.com/watch?v=4q0fFEypacA)
+- Apollo Setup & GraphQL Queries/Mutations in React (2/6) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-2-apollo-queries-mutations-oe8ahyo2ei) | [Video](https://www.youtube.com/watch?v=ZItsQWNPw1U)
