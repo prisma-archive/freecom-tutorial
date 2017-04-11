@@ -1,4 +1,4 @@
-# Freecom Full-stack Tutorial Series
+# Freecom Full-Stack Tutorial Series
 
 In this repository, you find the code for each chapter of the [Freecom](https://www.graph.cool/freecom/) tutorial series. With every new chapter, we're adding _two_ new folders to the repository that will generally be named as follows:
  
