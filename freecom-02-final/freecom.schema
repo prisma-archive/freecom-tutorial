@@ -1,51 +1,36 @@
-type Agent {
-  createdAt: DateTime
+type Customer {
   id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  name: String!
+  conversations: [Conversation!]! @relation(name: "ConversationsFromCustomer")
+}
+
+type Agent {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  slackUserId: String!
+  slackUserName: String!
+  conversations: [Conversation!]! @relation(name: "ConversationsFromAgent")
   messages: [Message!]! @relation(name: "MessagesFromAgents")
-  slackUserId: String
-  slackUserName: String
-  updatedAt: DateTime
 }
 
 type Conversation {
-  createdAt: DateTime
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  slackChannelIndex: Int!
   customer: Customer @relation(name: "ConversationsFromCustomer")
-  id: ID!
+  agent: Agent @relation(name: "ConversationsFromAgent")
   messages: [Message!]! @relation(name: "MessagesInConversation")
-  slackChannelName: String
-  updatedAt: DateTime
-}
-
-type Customer {
-  conversations: [Conversation!]! @relation(name: "ConversationsFromCustomer")
-  createdAt: DateTime
-  id: ID!
-  name: String
-  updatedAt: DateTime
-}
-
-type File {
-  contentType: String!
-  createdAt: DateTime
-  id: ID!
-  name: String!
-  secret: String!
-  size: Int!
-  updatedAt: DateTime
-  url: String!
 }
 
 type Message {
+  id: ID!
+  createdAt: DateTime!
+  updatedAt: DateTime!
+  text: String!
   agent: Agent @relation(name: "MessagesFromAgents")
   conversation: Conversation @relation(name: "MessagesInConversation")
-  createdAt: DateTime
-  id: ID!
-  text: String
-  updatedAt: DateTime
-}
-
-type User {
-  createdAt: DateTime
-  id: ID!
-  updatedAt: DateTime
 }
