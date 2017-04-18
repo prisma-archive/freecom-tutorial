@@ -10,6 +10,7 @@ type Agent {
   id: ID!
   createdAt: DateTime!
   updatedAt: DateTime!
+  imageUrl: String!
   slackUserId: String!
   slackUserName: String!
   conversations: [Conversation!]! @relation(name: "ConversationsFromAgent")
