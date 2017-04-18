@@ -1,0 +1,42 @@
+.chat-container {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.upload-image-indicator {
+    margin: 20px 0 0 6px;
+    color: rgba(0,0,0,.2);
+    font-size: 14px;
+}
+
+.dropzone {
+    height: calc(100% - 80px);
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+}
+
+.loading {
+    border-radius: 100%;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+    width: 30px;
+    height: 30px;
+}
+
+.message-body {
+    height: calc(100% - 53px);
+}
+
+@keyframes sk-scaleout {
+    0% {
+        transform: scale(0);
+    } 100% {
+          transform: scale(1.0);
+          opacity: 0;
+      }
+}

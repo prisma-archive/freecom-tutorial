@@ -1,0 +1,16 @@
+.message-container {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+.message-container-padding-left {
+    padding-right: 40px;
+}
+
+.message-container-padding-right {
+    padding-left: 40px;
+}
+
+.message-avatar {
+    margin-bottom: 16px;
+}

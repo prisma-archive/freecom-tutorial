@@ -1,0 +1,26 @@
+{
+  "name": "freecom",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "react-scripts": "0.9.0"
+  },
+  "dependencies": {
+    "apollo-client": "^0.8.7",
+    "classnames": "^2.2.5",
+    "graphql-tag": "^1.2.4",
+    "react": "^15.4.2",
+    "react-apollo": "^0.11.2",
+    "react-dom": "^15.4.2",
+    "react-dropzone": "^3.11.0",
+    "react-textarea-autosize": "^4.0.5",
+    "sillyname": "^0.1.0",
+    "subscriptions-transport-ws": "0.5.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

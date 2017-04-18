@@ -1,0 +1,41 @@
+.attachment-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 16px;
+}
+
+.input-dropzone {
+}
+
+.chat-input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.chat-input-shadow {
+  box-shadow: 0px -3px 48px -1px rgba(0,0,0,0.10);
+	background: #fff;
+}
+
+.chat-input textarea {
+  width: calc(100% - 52px);
+  height: auto;
+  border: 0px;
+  padding: 20px 0px 20px 30px;
+  resize: none;
+  font-size: 15px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	line-height: 1.33;
+	color: #565867;
+}
+
+.chat-input .Dropzone {
+  width: 40px;
+  height: 40px;
+  margin: 6px;
+}
+
