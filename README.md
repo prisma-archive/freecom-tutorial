@@ -5,7 +5,7 @@ In this repository, you find the code for each chapter of the [Freecom](https://
 - `freecom-0X`:  Contains the starter code for chapter `X`
 - `freecom-0X-final`: Contains the final code for chapter `X` and serves as a reference solution if you get lost along the way 
 
-Note that you'll have to [add your own GraphQL endpoint](https://www.youtube.com/watch?v=ZItsQWNPw1U&feature=youtu.be&t=8m8s) in `src/index.js`
+Note that you'll have to [add your own GraphQL endpoint](https://www.youtube.com/watch?v=ZItsQWNPw1U&feature=youtu.be&t=8m8s) in `src/index.js`.
 
 
 ## Previous Chapters
