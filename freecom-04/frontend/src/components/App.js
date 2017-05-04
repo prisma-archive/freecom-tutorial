@@ -136,6 +136,8 @@ class App extends Component {
     if (TEST_WITH_NEW_CUSTOMER) {
       localStorage.removeItem(FREECOM_CUSTOMER_ID_KEY)
       localStorage.removeItem(FREECOM_CUSTOMER_NAME_KEY)
+      localStorage.removeItem(FREECOM_AUTH_TOKEN_KEY)
+      localStorage.removeItem(FREECOM_CUSTOMER_SECRET_KEY)
     }
 
     const customerId = localStorage.getItem(FREECOM_CUSTOMER_ID_KEY)
