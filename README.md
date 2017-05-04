@@ -15,6 +15,8 @@ The chapters provide a high-level overview on the concepts being used. If you wa
 - Designing the Schema & GraphQL Server (1/6) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-1-schema-graphql-server-xuakjj68lp/) | [Video](https://www.youtube.com/watch?v=4q0fFEypacA)
 - Apollo Setup & GraphQL Queries/Mutations in React (2/6) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-2-apollo-queries-mutations-oe8ahyo2ei) | [Video](https://www.youtube.com/watch?v=ZItsQWNPw1U)
 - Realtime Updates with GraphQL Subscriptions (3/6) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-3-subscriptions-die6mewitu/) | [Video](https://www.youtube.com/watch?v=mJMYyniCJe4)
+- Controlling Data Access with Authentication & Permissions (4/6) | [Chapter](https://www.graph.cool/docs/tutorials/freecom-4-authentication-and-permissions-pei9aid6ei/) | [Video](https://www.youtube.com/watch?v=RHI1affZAvM)
+
 
 ## Getting the GraphQL Endpoint
 
