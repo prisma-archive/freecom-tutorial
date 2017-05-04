@@ -10,15 +10,23 @@ import { graphql, compose, withApollo } from 'react-apollo'
 import gql from 'graphql-tag'
 import { timeDifferenceForDate, sortConversationByDateCreated, generateShortStupidName } from '../utils'
 import {TEST_WITH_NEW_CUSTOMER, FREECOM_CUSTOMER_ID_KEY, FREECOM_CUSTOMER_NAME_KEY,
-  MAX_USERNAME_LENGTH} from '../constants'
+  MAX_USERNAME_LENGTH, FREECOM_AUTH_TOKEN_KEY, FREECOM_CUSTOMER_SECRET_KEY} from '../constants'
+import cuid from 'cuid'
 
-const createCustomerAndFirstConversation = gql`
-  mutation createCustomer($name: String!) {
-    createCustomer(name: $name, conversations: [
-      {
-        slackChannelIndex: 1,
-      }
-    ]) {
+const createAuthenticatedCustomer = gql`
+  mutation authenticateAnonymousCustomer($secret: String!) {
+    authenticateAnonymousCustomer(secret: $secret) {
+      id
+      token
+    }
+  }
+`
+
+const initializeCustomer = gql`
+  mutation($name: String!, $customerId: ID!) {
+    updateCustomer(id: $customerId, name: $name, conversations: [{
+      slackChannelIndex: 1
+    }]) {
       id
       name
       conversations {
@@ -124,7 +132,7 @@ class App extends Component {
   _timer = null
 
   state = {
-    isOpen: false,
+    isOpen: true,
     selectedConversationId: null,
     conversations: [],
   }
@@ -135,6 +143,8 @@ class App extends Component {
     if (TEST_WITH_NEW_CUSTOMER) {
       localStorage.removeItem(FREECOM_CUSTOMER_ID_KEY)
       localStorage.removeItem(FREECOM_CUSTOMER_NAME_KEY)
+      localStorage.removeItem(FREECOM_CUSTOMER_SECRET_KEY)
+      localStorage.removeItem(FREECOM_AUTH_TOKEN_KEY)
     }
 
     const customerId = localStorage.getItem(FREECOM_CUSTOMER_ID_KEY)
@@ -252,20 +262,31 @@ class App extends Component {
   }
 
   _setupNewCustomer = async () => {
+    // authentication
+    const secret = cuid()
+    localStorage.setItem(FREECOM_CUSTOMER_SECRET_KEY, secret)
+    const authenticationResult = await this.props.createAuthenticatedCustomerMutation({
+      variables: { secret }
+    })
+    const authToken = authenticationResult.data.authenticateAnonymousCustomer.token
+    const customerId = authenticationResult.data.authenticateAnonymousCustomer.id
+    localStorage.setItem(FREECOM_AUTH_TOKEN_KEY, authToken)
+    localStorage.setItem(FREECOM_CUSTOMER_ID_KEY, customerId)
+
+    // initialization
     const username = generateShortStupidName(MAX_USERNAME_LENGTH)
-    const result = await this.props.createCustomerAndFirstConversationMutation({
+    const result = await this.props.initializeCustomerMutation({
       variables: {
+        customerId,
         name: username,
       }
     })
-    const customerId = result.data.createCustomer.id
-    localStorage.setItem(FREECOM_CUSTOMER_ID_KEY, customerId)
     localStorage.setItem(FREECOM_CUSTOMER_NAME_KEY, username)
-    this.setState({
-      conversations: result.data.createCustomer.conversations,
-      selectedConversationId: result.data.createCustomer.conversations[0].id
-    })
 
+    this.setState({
+      conversations: result.data.updateCustomer.conversations,
+      selectedConversationId: result.data.updateCustomer.conversations[0].id
+    })
   }
 
   _loadConversations = async (customerId) => {
@@ -334,7 +355,8 @@ class App extends Component {
 
 const appWithMutations = compose(
   graphql(createConversation, {name : 'createConversationMutation'}),
-  graphql(createCustomerAndFirstConversation, {name: 'createCustomerAndFirstConversationMutation'}),
+  graphql(createAuthenticatedCustomer, {name: 'createAuthenticatedCustomerMutation'}),
+  graphql(initializeCustomer, {name: 'initializeCustomerMutation'}),
 )(App)
 
 export default withApollo(appWithMutations)

@@ -5,6 +5,7 @@ import './index.css'
 import ApolloClient, { createNetworkInterface } from 'apollo-client'
 import { ApolloProvider } from 'react-apollo'
 import { SubscriptionClient, addGraphQLSubscriptions } from 'subscriptions-transport-ws'
+import { FREECOM_AUTH_TOKEN_KEY } from './constants'
 
 // Create WebSocket client
 const wsClient = new SubscriptionClient(`wss://subscriptions.graph.cool/v1/__PROJECT_ID__`, {

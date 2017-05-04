@@ -10,7 +10,8 @@ import { graphql, compose, withApollo } from 'react-apollo'
 import gql from 'graphql-tag'
 import { timeDifferenceForDate, sortConversationByDateCreated, generateShortStupidName } from '../utils'
 import {TEST_WITH_NEW_CUSTOMER, FREECOM_CUSTOMER_ID_KEY, FREECOM_CUSTOMER_NAME_KEY,
-  MAX_USERNAME_LENGTH} from '../constants'
+  MAX_USERNAME_LENGTH, FREECOM_AUTH_TOKEN_KEY, FREECOM_CUSTOMER_SECRET_KEY} from '../constants'
+import cuid from 'cuid'
 
 const createCustomerAndFirstConversation = gql`
   mutation createCustomer($name: String!) {
