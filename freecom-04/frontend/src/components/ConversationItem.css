@@ -1,0 +1,12 @@
+.ConversationItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: rgba(0,0,0,.15);
+    height: 50px;
+    margin: 6px 0 6px 0;
+    cursor: pointer;
+    border-radius: 2px;
+    padding: 0 12px 0 12px;
+}
