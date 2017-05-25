@@ -1,0 +1,14 @@
+subscription {
+  Conversation(filter: {
+    mutation_in: [CREATED]
+  }) {
+    node {
+      customer {
+        name
+        _conversationsMeta {
+          count
+        }
+      }
+    }
+  }
+}

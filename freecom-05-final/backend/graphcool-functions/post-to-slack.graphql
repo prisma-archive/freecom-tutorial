@@ -1,0 +1,18 @@
+subscription {
+  Message(filter: {
+    mutation_in: [CREATED]
+  }) {
+    node {
+      text
+      conversation {
+        slackChannelIndex
+        customer {
+          name
+        }
+      }
+      agent {
+        slackUserName
+      }
+    }
+  }
+}
