@@ -69,5 +69,5 @@ You can generate your own GraphQL API from this schema by using the [Graphcool C
 npm install -g graphcool
 
 # Get the GraphQL Endpoint
-graphcool create http://graphqlbin.com/freecom.graphql -n Freecom
+graphcool init --schema http://graphqlbin.com/freecom.graphql --name Freecom
 ```
