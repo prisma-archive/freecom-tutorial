@@ -71,3 +71,9 @@ npm install -g graphcool
 # Get the GraphQL Endpoint
 graphcool init --schema http://graphqlbin.com/freecom.graphql --name Freecom
 ```
+
+## Help & Community [![Slack Status](https://slack.graph.cool/badge.svg)](https://slack.graph.cool)
+
+Say hello in our [Slack](http://slack.graph.cool/) or visit the [Graphcool Forum](https://www.graph.cool/forum) if you run into issues or have questions. We love talking to you!
+
+![](http://i.imgur.com/5RHR6Ku.png)
