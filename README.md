@@ -1,5 +1,7 @@
 # Freecom Full-Stack Tutorial Series
 
+This tutorial is deprecated in favor of [How to GraphQL](https://www.howtographql.com).
+
 <!--
 In this repository, you find the code for each chapter of the [Freecom](https://www.graph.cool/freecom/) tutorial series. With every new chapter, we're adding _two_ new folders to the repository that will generally be named as follows:
  
