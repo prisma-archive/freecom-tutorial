@@ -1,5 +1,6 @@
 # Freecom Full-Stack Tutorial Series
 
+<!--
 In this repository, you find the code for each chapter of the [Freecom](https://www.graph.cool/freecom/) tutorial series. With every new chapter, we're adding _two_ new folders to the repository that will generally be named as follows:
  
 - `freecom-0X`:  Contains the **starter code** for chapter `X`
@@ -77,3 +78,5 @@ graphcool init --schema http://graphqlbin.com/freecom.graphql --name Freecom
 Say hello in our [Slack](http://slack.graph.cool/) or visit the [Graphcool Forum](https://www.graph.cool/forum) if you run into issues or have questions. We love talking to you!
 
 ![](http://i.imgur.com/5RHR6Ku.png)
+
+-->
